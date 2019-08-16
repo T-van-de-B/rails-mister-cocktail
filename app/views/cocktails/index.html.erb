@@ -1,16 +1,30 @@
-<h1>Cocktails</h1>
 
-<%= cl_image_tag("upogm4jphjemcc1vrhob.jpg") %>
-
-<% @cocktails.each do |cocktail| %>
-<div class="card" style="width: 18rem;">
-  <img class="card-img-top" src=".../100px180/" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title"><%= cocktail.name %></h5>
-    <p class="card-text"><%= link_to 'Details', cocktail_path(cocktail) %></p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1509669803555-fd5edd8d5a41?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80);">
+  <div class="container">
+    <h1>Tom's Awesome Cocktails </h1>
+    <p>Best cockails in town - check it out</p>
   </div>
-<% end %>
+</div>
 
 
-<%= link_to "Add Cocktail", new_cocktail_path %>
+<div class="cards">
+  <% @cocktails.each do |cocktail| %>
+
+   <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path cocktail.photo %>')"><%= link_to cocktail.name, cocktail_path(cocktail)%></div>
+  <% end %>
+
+</div>
+
+
+
+<div class="footer">
+  <div class="footer-links">
+   <%= link_to "Add Cocktail", new_cocktail_path %>
+  </div>
+  <div class="footer-copyright">
+    This website is brought to you with <i class="fas fa-heart"></i>
+  </div>
+</div>
+
+
+

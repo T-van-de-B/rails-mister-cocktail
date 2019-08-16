@@ -1,6 +1,33 @@
-<h1>Cocktails#new</h1>
-<%= simple_form_for @cocktail do |f| %>
-  <%= f.input :name %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1509669803555-fd5edd8d5a41?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80);">
+  <div class="container">
+    <h1>Tom's Awesome Cocktails </h1>
+    <p>Best cockails in town - check it out</p>
+  </div>
+</div>
+<div class="search_form">
+  <%= simple_form_for @cocktail do |f| %>
+    <%= f.input :name %>
 
-  <%= f.submit "add a cocktail", class: "btn btn-primary" %>
-<% end %>
+    <%= f.input :photo %>
+    <%= f.input :photo_cache, as: :hidden %>
+
+    <%= f.submit "Add a new cocktail", class: "btn btn-primary" %>
+  <% end %>
+</div>
+
+
+
+<div class="footer">
+  <div class="footer-links">
+   <%= link_to "Back to Home", cocktails_path %>
+  </div>
+  <div class="footer-copyright">
+    This website is brought to you with <i class="fas fa-heart"></i>
+  </div>
+</div>
+
+
+
+
+
+
